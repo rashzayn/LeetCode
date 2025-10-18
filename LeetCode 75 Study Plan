@@ -1,1 +1,19 @@
-#LeetCode 75 Study Plan
+#LeetCode 75 Study Plan.
+
+Problem Number 1. 
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        merged = []
+        i = 0
+        
+        # Alternate characters from word1 and word2
+        while i < len(word1) and i < len(word2):
+            merged.append(word1[i])
+            merged.append(word2[i])
+            i += 1
+        
+        # Append remaining characters from the longer string
+        merged.append(word1[i:])
+        merged.append(word2[i:])
+        
+        return ''.join(merged)
